@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 45 42% 93%;
+    --foreground: 55 6% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 55 6% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 55 6% 25%;
+
+    --primary: 69 12% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 15% 80%;
+    --secondary-foreground: 55 6% 25%;
+
+    --muted: 30 9% 82%;
+    --muted-foreground: 55 6% 38%;
+
+    --accent: 38 100% 62%;
+    --accent-foreground: 55 6% 25%;
+
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 80%;
+    --input: 40 15% 80%;
+    --ring: 69 12% 38%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(69 12% 38%), hsl(69 12% 48%));
+    --geometric-shape: hsl(69 12% 38% / 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 45 25% 15%;
+    --foreground: 45 20% 95%;
+
+    --card: 45 20% 18%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 45 20% 18%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 69 12% 45%;
+    --primary-foreground: 45 20% 95%;
+
+    --secondary: 40 15% 25%;
+    --secondary-foreground: 45 20% 95%;
+
+    --muted: 40 12% 28%;
+    --muted-foreground: 45 15% 70%;
+
+    --accent: 38 100% 65%;
+    --accent-foreground: 45 10% 15%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 45 20% 95%;
+
+    --border: 40 15% 25%;
+    --input: 40 15% 25%;
+    --ring: 69 12% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .geometric-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, var(--geometric-shape) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, var(--geometric-shape) 0%, transparent 50%);
+  }
+
+  .sharp-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .hero-text {
+    @apply text-7xl md:text-8xl lg:text-9xl font-black tracking-tight;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 0.9;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-32;
+  }
+}
