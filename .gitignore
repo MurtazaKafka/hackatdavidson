@@ -24,5 +24,10 @@ dist-ssr
 *.sw?
 .vercel
 
-# Secrets
+# Environment variables
 .env
+.env.*
+!.env.example
+
+# Supabase
+supabase/.temp/
